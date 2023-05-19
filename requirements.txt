@@ -11,3 +11,4 @@ PyJWT==2.4.0
 PyMySQL==1.0.2
 pyOpenSSL==22.0.0
 gunicorn
+whitenoise
