@@ -10,7 +10,7 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-CMD ["gunicorn", "--bind", ":5000", "main.wsgi:application"]
+CMD ["gunicorn", "--bind", ":5000", "petshop.wsgi:application"]
 
 # sudo docker build -t fastapi .
 # sudo docker run -p 3000:5000 fastapi
