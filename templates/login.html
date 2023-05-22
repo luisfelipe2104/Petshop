@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class='container-login'>
+    <div class='container-logo'>
+        <h1>Petshop</h1>
+        <img class='login-logo' src="{% static 'image/dog.png' %}" >
+    </div>
+
+    <div class='container-form'>
+        <h1>Login</h1>
+        <form class='login-form' method='post' action>
+            {% csrf_token %}
+            <input>
+            <input>
+
+            <button>Login</button>
+        </form>
+    </div
+</div>
+
+{% endblock %}
