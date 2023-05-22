@@ -1,3 +1,37 @@
 *{
-    background-color: blue;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #cfcece;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-login{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.container-logo{
+    width: 50%;
+
+}
+
+.login-logo{
+    height: 100%;
+}
+
+.container-form{
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
