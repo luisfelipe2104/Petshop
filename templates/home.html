@@ -1,8 +1,42 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<h1>Hello World</h1>
+<div class='container-login'>
+
+  <div class="container-main">
+
+    <div class='container-logo'>
+      <h1>Petshop</h1>
+      <img class='login-logo' src="{% static 'image/dog.png' %}">
+    </div>
+
+    <div class="text-container">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolorum quidem porro voluptatibus optio ad fugiat
+        modi, architecto sed reprehenderit, quod similique. Sequi fugiat a quisquam ipsa, itaque odio aliquid.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolorum quidem porro voluptatibus optio ad fugiat
+        modi, architecto sed reprehenderit, quod similique. Sequi fugiat a quisquam ipsa, itaque odio aliquid.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="button-container">
+
+    <a href="./login">Login</a>
+
+    <a href="./register">Cadastro</a>
+
+  </div>
+
+</div>
 
 
 {% endblock %}

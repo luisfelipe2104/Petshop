@@ -1,7 +1,30 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<h1>Register Page</h1>
+<div class='container-login'>
+    <div class='container-logo'>
+        <h1>Petshop</h1>
+        <img class='login-logo' src="{% static 'image/dog.png' %}" >
+    </div>
+
+    <div class='container-form'>
+        <h1>Cadastro</h1>
+        <form class='login-form' method='post' action>
+            {% csrf_token %}
+            <input placeholder="Nome">
+            <input placeholder="Email">
+            <input placeholder="Senha">
+
+            <button>Cadastro</button>
+        </form>
+    </div
+</div>
 
 {% endblock %}
