@@ -16,13 +16,19 @@
 
     <div class='container-form'>
         <h1>Cadastro</h1>
-        <form class='login-form' method='post' action>
+        <form class='login-form' method='POST' action="">
             {% csrf_token %}
-            <input placeholder="Nome">
-            <input placeholder="Email">
-            <input placeholder="Senha">
+            <input name="username" type="text" placeholder="Nome">
+            <input name="email" type="email" placeholder="Email">
+            <input name="password" type="password" placeholder="Senha">
 
-            <button>Cadastro</button>
+            <div>
+                {% for message in messages %}
+                    <h5 style="color: red;">{{message}}</h5>
+                {% endfor %}
+            </div>
+
+            <button type="submit">Cadastro</button>
         </form>
     </div
 </div>

@@ -16,12 +16,18 @@
 
     <div class='container-form'>
         <h1>Login</h1>
-        <form class='login-form' method='post' action>
+        <form class='login-form' method="POST" action="">
             {% csrf_token %}
-            <input placeholder="Email">
-            <input placeholder="Senha">
+            <input type='text' name="username" placeholder="Username">
+            <input type='password' name="password" placeholder="Senha">
 
-            <button>Login</button>
+            <div>
+                {% for message in messages %}
+                    <h5 style="color: red;">{{message}}</h5>
+                {% endfor %}
+            </div>
+
+            <button type="submit">Login</button>
         </form>
     </div
 </div>

@@ -12,3 +12,5 @@ PyMySQL==1.0.2
 pyOpenSSL==22.0.0
 gunicorn
 whitenoise
+python-decouple
+pymysql
