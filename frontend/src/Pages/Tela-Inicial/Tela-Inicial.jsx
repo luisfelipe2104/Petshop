@@ -9,6 +9,8 @@ import vacinacao from './img/vacinação.svg'
 import consulta from './img/consulta.svg'
 import produtos from './img/produtos.svg'
 
+import Produtos from '../../components/Produtos/Produtos';
+
 export default function TelaInicial() {
   return (
     <div>
@@ -57,7 +59,7 @@ export default function TelaInicial() {
           </div>
 
           <div className="card">
-            <div className="title-card">Vacinação</div>
+            <div className="title-card">Banho & Tosa</div>
             <div className="card-background">
               <img src={banhoetosa} />
               <button className='card-button'>Agendar</button>
@@ -65,7 +67,7 @@ export default function TelaInicial() {
           </div>
 
           <div className="card">
-            <div className="title-card">Vacinação</div>
+            <div className="title-card">Consulta</div>
             <div className="card-background">
               <img src={consulta} />
               <button className='card-button'>Agendar</button>
@@ -73,15 +75,33 @@ export default function TelaInicial() {
           </div>
 
           <div className="card">
-            <div className="title-card">Vacinação</div>
+            <div className="title-card">Produtos</div>
             <div className="card-background">
               <img src={produtos} />
-              <button className='card-button'>Agendar</button>
+              <button className='card-button'>Ver</button>
             </div>
           </div>
 
         </div>
+      </div>
 
+      <div className="section-3">
+        <div className="produtos-container">
+
+          <div className="title-container">
+            <h1 className='title'>Produtos</h1>
+          </div>
+
+        </div>
+
+        <div className="produtos">
+          <Produtos productName="Ração Golden para raças pequenas 1kg" productPrice="106,25" />
+          <Produtos productName="Ração Golden para raças pequenas 1kg" productPrice="106,25" />
+          <Produtos productName="Ração Golden para raças pequenas 1kg" productPrice="106,25" />
+          <Produtos productName="Ração Golden para raças pequenas 1kg" productPrice="106,25" />
+          <Produtos productName="Ração Golden para raças pequenas 1kg" productPrice="106,25" />
+          <Produtos productName="Ração Golden para raças pequenas 1kg" productPrice="106,25" />
+        </div>
 
       </div>
 
