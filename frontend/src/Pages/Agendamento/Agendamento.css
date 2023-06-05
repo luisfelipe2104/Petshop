@@ -1,0 +1,53 @@
+.container-agendamento{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.title-container {
+  width: 100%;
+}
+
+.title {
+  font-size: 35px;
+  font-family: 'Nunito Sans', sans-serif;
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+
+  background-color: #863FE1;
+}
+
+.select-service { 
+  width: 50vw;
+}
+
+.checkbox-container{
+  width: 50vw;
+  height: 15vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  overflow-y: hidden;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.dividir {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+}

@@ -18,6 +18,10 @@ header{
   background-color: #FFF;
 }
 
+.container-logo img {
+  width: 200px;
+}
+
 .nav-bar{
   display: flex;
   flex-direction: row;

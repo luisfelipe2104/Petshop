@@ -2,6 +2,8 @@ import React from 'react'
 import Header from '../../components/Header/Header'
 import './Tela-Inicial.css'
 
+import { Link } from 'react-router-dom'
+
 import Patas from '../../components/assets/patas.svg';
 
 import banhoetosa from './img/banho&tosa.svg'
@@ -54,7 +56,9 @@ export default function TelaInicial() {
             <div className="title-card">Vacinação</div>
             <div className="card-background">
               <img src={vacinacao} />
-              <button className='card-button'>Agendar</button>
+              <Link className='link' to="/agendamento">
+                <button className='card-button'>Agendar</button>
+              </Link>
             </div>
           </div>
 
@@ -62,7 +66,9 @@ export default function TelaInicial() {
             <div className="title-card">Banho & Tosa</div>
             <div className="card-background">
               <img src={banhoetosa} />
-              <button className='card-button'>Agendar</button>
+              <Link className='link' to="/agendamento">
+                <button className='card-button'>Agendar</button>
+              </Link>
             </div>
           </div>
 
@@ -70,7 +76,9 @@ export default function TelaInicial() {
             <div className="title-card">Consulta</div>
             <div className="card-background">
               <img src={consulta} />
-              <button className='card-button'>Agendar</button>
+              <Link className='link' to="/agendamento">
+                <button className='card-button'>Agendar</button>
+              </Link>
             </div>
           </div>
 
