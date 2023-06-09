@@ -4,12 +4,7 @@ from .models import User, Product, Purchase, Appointment
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['email', 'password', 'name']
-
-class LoginSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['email', 'password']
+        fields = '__all__'
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
