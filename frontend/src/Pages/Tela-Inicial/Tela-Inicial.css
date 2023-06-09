@@ -30,25 +30,8 @@
   gap: 5px;
 }
 
-.slogan {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  gap: 15px;
-}
-
-.slogan h1 {
-  font-size: 50px;
-  font-family: 'Nunito Sans', sans-serif;
-}
-
-.slogan-destacado {
-  background-color: #EFDB6F;
-
-  border-radius: 25px;
-
-  padding: 5px;
+.slogan-img {
+  width: 550px;
 }
 
 .patas {

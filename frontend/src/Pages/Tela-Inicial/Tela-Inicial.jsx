@@ -4,7 +4,8 @@ import './Tela-Inicial.css'
 
 import { Link } from 'react-router-dom'
 
-import Patas from '../../components/assets/patas.svg';
+import Patas from './img/patas.svg';
+import Slogan from './img/slogan.svg'
 
 import banhoetosa from './img/banho&tosa.svg'
 import vacinacao from './img/vacinação.svg'
@@ -22,15 +23,7 @@ export default function TelaInicial() {
 
         <div className="container-slogan">
 
-          <div className="slogan">
-            <h1>Seu</h1>
-            <h1 className="slogan-destacado">mundo animal</h1>
-            <h1>em</h1>
-          </div>
-
-          <div className="slogan">
-            <h1 className="slogan-destacado">um lugar só</h1>
-          </div>
+          <img className="slogan-img" src={Slogan} />
 
         </div>
 
