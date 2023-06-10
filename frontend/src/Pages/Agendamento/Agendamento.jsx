@@ -5,6 +5,8 @@ import Header from '../../components/Header/Header'
 
 import Calendar from 'react-calendar';
 
+import { IMaskInput } from 'react-imask';
+
 import 'react-calendar/dist/Calendar.css';
 
 import { DataContext } from '../../contexts/dataContext';
@@ -67,7 +69,7 @@ export default function Agendamento() {
                   <input type="text" name="" id="" />
   
                   <p>CPF</p>
-                  <input type="text" name="" id="" />
+                  <IMaskInput placeholder='cpf' type="text" mask="000.000.000-00" name="" id="" />
                 </div>
   
               </div>
@@ -84,7 +86,7 @@ export default function Agendamento() {
                   <input type="text" name="" id="" />
   
                   <p>Data de nascimento</p>
-                  <input type="text" name="" id="" />
+                  <IMaskInput mask="00/00/0000" type="text" name="" id="" />
                 </div>
   
               </div>
