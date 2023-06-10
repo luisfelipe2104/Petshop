@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Paws from '../../components/assets/patas.svg'
 import Logo from '../../components/assets/logo.svg'
 import './Login.css'
 
 function Login() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const handleClick = async (e) => {
+        e.preventDefault()
+        console.log(email, password);
+    }
+
   return (
     <div className='login-container'>
         <div className="welcome-container">
@@ -21,12 +29,18 @@ function Login() {
         </div>
 
         <div className="form-container">
+            <div className="navbar">
+                <p>Inicio</p>
+                <p>Login</p>
+                <p>Cadastro</p>
+            </div>
             <form action="" className="form">
                 <h2>Login</h2>
-                <input type="text" placeholder="Email" />
-                <input type="text" placeholder="Password" />
-                <button>Entrar</button>
+                <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Email" />
+                <input value={password} onChange={(e) => setPassword(e.target.value)} type="text" placeholder="Password" />
+                <button onClick={(e) => handleClick(e)}>Entrar</button>
             </form>
+            <div />
         </div>
     </div>
   )

@@ -14,12 +14,15 @@ class CreateUser(APIView):
             email = serializer.data.get('email')
             password = serializer.data.get('password')
 
-            user = User.objects.create(name=name, email=email, password=password)
-            user.save()
-            return Response({ 'msg': 'User created!' }, status=status.HTTP_201_CREATED)
-
+            userExists = User.objects.filter(email=email).exists()
+            if not userExists:
+                user = User.objects.create(name=name, email=email, password=password)
+                user.save()
+                return Response({ 'msg': 'User created!' }, status=status.HTTP_201_CREATED)
+            else:
+                return Response({ 'msg': 'Email is being used!' }, status=status.HTTP_409_CONFLICT)
         else:
-            return Response({ 'msg': "Can't add empty data!" }, status=status.HTTP_204_NO_CONTENT)
+            return Response({ 'msg': serializer.errors }, status=status.HTTP_400_BAD_REQUEST)
 
 class Login(APIView):
     def post(self, request):

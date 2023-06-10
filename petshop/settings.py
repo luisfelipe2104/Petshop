@@ -144,3 +144,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media path
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  ############---------
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000', 
+    'https://petshop-pearl.vercel.app'
+]
