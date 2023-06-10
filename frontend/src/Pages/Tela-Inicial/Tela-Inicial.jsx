@@ -2,6 +2,10 @@ import React, { useContext } from 'react'
 import Header from '../../components/Header/Header'
 import './Tela-Inicial.css'
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import { Link } from 'react-router-dom'
 
 import Patas from './img/patas.svg';
@@ -42,52 +46,63 @@ export default function TelaInicial() {
       </div>
 
       <div className="section-2">
-
+      
         <div className="title-container">
           <h1 className='title'>Conheça nossos serviços</h1>
         </div>
 
-        <div className="cards">
+        <Container>
 
-          <div className="card">
-            <div className="title-card">Vacinação</div>
-            <div className="card-background">
-              <img src={vacinacao} />
-              <Link className='link' to={isLoggedIn ? "/agendamento" : "/login"}>
-                <button className='card-button'>Agendar</button>
-              </Link>
-            </div>
-          </div>
+          <Row>
+            <Col md={3}>
+              <div className="card">
+                <div className="title-card">Vacinação</div>
+                <div className="card-background">
+                  <img src={vacinacao} />
+                  <Link className='link' to={isLoggedIn ? "/agendamento" : "/login"}>
+                    <button className='card-button'>Agendar</button>
+                  </Link>
+                </div>
+              </div>
+            </Col>
 
-          <div className="card">
-            <div className="title-card">Banho & Tosa</div>
-            <div className="card-background">
-              <img src={banhoetosa} />
-              <Link className='link' to={isLoggedIn ? "/agendamento" : "/login"}>
-                <button className='card-button'>Agendar</button>
-              </Link>
-            </div>
-          </div>
+            <Col md={3}>
+              <div className="card">
+                <div className="title-card">Banho & Tosa</div>
+                <div className="card-background">
+                  <img src={banhoetosa} />
+                  <Link className='link' to={isLoggedIn ? "/agendamento" : "/login"}>
+                    <button className='card-button'>Agendar</button>
+                  </Link>
+                </div>
+              </div>
+            </Col>
 
-          <div className="card">
-            <div className="title-card">Consulta</div>
-            <div className="card-background">
-              <img src={consulta} />
-              <Link className='link' to={isLoggedIn ? "/agendamento" : "/login"}>
-                <button className='card-button'>Agendar</button>
-              </Link>
-            </div>
-          </div>
+            <Col md={3}>
+              <div className="card">
+                <div className="title-card">Consulta</div>
+                <div className="card-background">
+                  <img src={consulta} />
+                  <Link className='link' to={isLoggedIn ? "/agendamento" : "/login"}>
+                    <button className='card-button'>Agendar</button>
+                  </Link>
+                </div>
+              </div>            
+            </Col>
 
-          <div className="card">
-            <div className="title-card">Produtos</div>
-            <div className="card-background">
-              <img src={produtos} />
-              <button className='card-button'>Ver</button>
-            </div>
-          </div>
+            <Col md={3}>
+              <div className="card">
+                <div className="title-card">Produtos</div>
+                <div className="card-background">
+                  <img src={produtos} />
+                  <button className='card-button'>Ver</button>
+                </div>
+              </div>
+            </Col>
 
-        </div>
+          </Row>
+
+        </Container>
       </div>
 
       <div className="section-3">
