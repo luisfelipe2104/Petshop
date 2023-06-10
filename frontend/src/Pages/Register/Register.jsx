@@ -5,12 +5,16 @@ import './Register.css'
 import api from '../../services/api'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Register() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
+    
+    const navigate = useNavigate()
 
     const handleClick = async (e) => {
         e.preventDefault()
@@ -20,6 +24,7 @@ function Register() {
                 const { data }  = await api.post('/create-user/', { name, email, password })
                 console.log(data);
                 toast(data.msg)
+                navigate('/login')
             } catch (err) {
                 const data = err.response.data.msg
                 const array = Object.values(data)
@@ -51,9 +56,15 @@ function Register() {
 
         <div className="form-container">
             <div className="navbar">
-                <p>Inicio</p>
-                <p>Login</p>
-                <p>Cadastro</p>
+                <Link className='link' to="/">
+                    <p>Inicio</p>
+                </Link>
+                <Link className='link' to="login">
+                    <p>Login</p>
+                </Link>
+                <Link className='link' to="register">
+                    <p>Cadastro</p>
+                </Link>
             </div>
             <form action="" className="form">
                 <h2>Cadastro</h2>

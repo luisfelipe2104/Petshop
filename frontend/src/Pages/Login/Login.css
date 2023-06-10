@@ -74,6 +74,10 @@
     font-size: 18px;
 }
 
+.link {
+    text-decoration: none;
+}
+
 .form-container form{
     width: 100%;
     display: flex;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../../components/Header/Header'
 import './Tela-Inicial.css'
 
@@ -14,7 +14,11 @@ import produtos from './img/produtos.svg'
 
 import Produtos from '../../components/Produtos/Produtos';
 
+import { DataContext } from '../../contexts/dataContext';
+
 export default function TelaInicial() {
+  const { isLoggedIn } = useContext(DataContext)
+
   return (
     <div>
       <Header />
@@ -49,7 +53,7 @@ export default function TelaInicial() {
             <div className="title-card">Vacinação</div>
             <div className="card-background">
               <img src={vacinacao} />
-              <Link className='link' to="/agendamento">
+              <Link className='link' to={isLoggedIn ? "/agendamento" : "/login"}>
                 <button className='card-button'>Agendar</button>
               </Link>
             </div>
@@ -59,7 +63,7 @@ export default function TelaInicial() {
             <div className="title-card">Banho & Tosa</div>
             <div className="card-background">
               <img src={banhoetosa} />
-              <Link className='link' to="/agendamento">
+              <Link className='link' to={isLoggedIn ? "/agendamento" : "/login"}>
                 <button className='card-button'>Agendar</button>
               </Link>
             </div>
@@ -69,7 +73,7 @@ export default function TelaInicial() {
             <div className="title-card">Consulta</div>
             <div className="card-background">
               <img src={consulta} />
-              <Link className='link' to="/agendamento">
+              <Link className='link' to={isLoggedIn ? "/agendamento" : "/login"}>
                 <button className='card-button'>Agendar</button>
               </Link>
             </div>

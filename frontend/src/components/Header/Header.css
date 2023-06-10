@@ -6,6 +6,11 @@
   overflow-x: hidden;
 }
 
+.link {
+  text-decoration: none;
+  color: #000;
+}
+
 header{
   width: 100vw;
   height: 60px;
@@ -22,7 +27,7 @@ header{
   width: 200px;
 }
 
-.nav-bar{
+.nav-bar, .nav-bar div{
   display: flex;
   flex-direction: row;
   align-items: center;

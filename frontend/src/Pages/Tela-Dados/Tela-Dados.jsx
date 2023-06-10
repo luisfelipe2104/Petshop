@@ -1,12 +1,19 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import './Tela-Dados.css'
 
 import Header from '../../components/Header/Header'
+import { DataContext } from '../../contexts/dataContext'
+
+import { Navigate } from 'react-router-dom'
 
 export default function TelaDados() {
     const [changeContent, setChangeContent] = useState(0)
+    const { isLoggedIn } = useContext(DataContext)
 
     return (
+        <div>
+            { isLoggedIn ? (
+
         <div>
             <Header />
 
@@ -49,6 +56,8 @@ export default function TelaDados() {
                 <div className="teste"></div>
 
             </div>
+        </div>
+            ) : <Navigate to='/login' /> }
         </div>
     )
 }
