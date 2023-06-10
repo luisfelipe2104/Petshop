@@ -5308,6 +5308,11 @@ ignore@^5.2.0:
   resolved "https://registry.npmjs.org/ignore/-/ignore-5.2.4.tgz"
   integrity sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==
 
+imask@^6.6.3:
+  version "6.6.3"
+  resolved "https://registry.yarnpkg.com/imask/-/imask-6.6.3.tgz#f9619cea770b97b5ef616acb036d27cf4a1b33d8"
+  integrity sha512-a9MTDhm+ET4G2IRcdUGuVTXHS05WsRNPGM5CeNJnXiXuoi4zv7g0/UDFLlRF4lBBeb8EWds4C4JVwhI0nuAIug==
+
 immer@^9.0.7:
   version "9.0.21"
   resolved "https://registry.npmjs.org/immer/-/immer-9.0.21.tgz"
@@ -8037,6 +8042,14 @@ react-error-overlay@^6.0.11:
   version "6.0.11"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
+
+react-imask@^6.6.3:
+  version "6.6.3"
+  resolved "https://registry.yarnpkg.com/react-imask/-/react-imask-6.6.3.tgz#febb3fb62e098d5cb51537e591bb2b6f7a7676ff"
+  integrity sha512-ZjqKXqBtc1LlFQWEj/SNuk4rQWXDdzLnDqCfNMnqdHHMqSvD1J+JuQZTuWgCCr5cLJxaXshDHW5AmhClk367Gw==
+  dependencies:
+    imask "^6.6.3"
+    prop-types "^15.8.1"
 
 react-is@^16.13.1:
   version "16.13.1"
