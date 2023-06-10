@@ -3,7 +3,7 @@ import Paws from '../../components/assets/patas.svg'
 import Logo from '../../components/assets/logo.svg'
 import './Register.css'
 import api from '../../services/api'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
@@ -65,7 +65,7 @@ function Register() {
             </form>
             <div />
         </div>
-        <ToastContainer />
+        
     </div>
   )
 }

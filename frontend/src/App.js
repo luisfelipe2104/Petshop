@@ -3,6 +3,7 @@ import Agendamento from "./Pages/Agendamento/Agendamento";
 import TelaDados from "./Pages/Tela-Dados/Tela-Dados";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
+import { ToastContainer } from 'react-toastify';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -18,7 +19,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
-
+      <ToastContainer />
     </div>
   );
 }

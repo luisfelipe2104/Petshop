@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Paws from '../../components/assets/patas.svg'
 import Logo from '../../components/assets/logo.svg'
 import './Login.css'
+import api from '../../services/api'
+import { toast } from 'react-toastify'
 
 function Login() {
     const [email, setEmail] = useState('')
@@ -9,7 +11,14 @@ function Login() {
 
     const handleClick = async (e) => {
         e.preventDefault()
-        console.log(email, password);
+        try {
+            const { data } = await api.post('/login/', { email, password })
+            console.log(data);
+            toast(data.msg)
+        } catch (err) {
+            const data = err.response.data.msg
+            toast(data)
+        }
     }
 
   return (
