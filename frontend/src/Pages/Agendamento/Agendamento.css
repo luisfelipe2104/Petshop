@@ -52,10 +52,15 @@
   align-items: center;
 }
 
+.select-service {
+  border: 2px solid blue;
+  width: fit-content;
+}
+
 .input2 {
   border: 2px solid #863FE1;
   border-radius: 10px;
-  width: 281px;
+  width: 100%;
 }
 
 .calendar-container {
@@ -64,6 +69,8 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
+
+  width: fit-content;
 }
 
 .button-container {
@@ -85,5 +92,21 @@
   border: 0px;
   border-radius: 20px;
   padding: 4px 22px;
+  width: fit-content;
+}
+
+.row2 {
+  width: 100%;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.col2{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
   width: fit-content;
 }
