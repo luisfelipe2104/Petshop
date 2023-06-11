@@ -55,14 +55,14 @@ function Register() {
         </div>
 
         <div className="form-container">
-            <div className="navbar">
+            <div className="navbar2">
                 <Link className='link' to="/">
                     <p>Inicio</p>
                 </Link>
-                <Link className='link' to="login">
+                <Link className='link' to="/login">
                     <p>Login</p>
                 </Link>
-                <Link className='link' to="register">
+                <Link className='link' to="/register">
                     <p>Cadastro</p>
                 </Link>
             </div>

@@ -53,7 +53,7 @@
   
   .produto-button {
     width: 180px;
-    height: 40px;
+    /* height: 40px; */
   
     display: flex;
     flex-direction: row;
@@ -75,6 +75,7 @@
     font-family: 'Nunito Sans', sans-serif;
     
     color: #000;
+    margin-top: 15px;
   }
   
   .produto-button img {

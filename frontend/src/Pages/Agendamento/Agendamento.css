@@ -51,3 +51,8 @@
 
   align-items: center;
 }
+
+.input {
+  border: 2px solid #863FE1;
+  border-radius: 10px;
+}

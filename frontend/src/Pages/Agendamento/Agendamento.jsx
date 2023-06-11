@@ -86,7 +86,7 @@ export default function Agendamento() {
                   <input type="text" name="" id="" />
   
                   <p>Data de nascimento</p>
-                  <IMaskInput mask="00/00/0000" type="text" name="" id="" />
+                  <IMaskInput className='input' mask="00/00/0000" type="text" name="" id="" />
                 </div>
   
               </div>
