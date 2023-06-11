@@ -7,7 +7,7 @@ import Calendar from 'react-calendar';
 
 import { IMaskInput } from 'react-imask';
 
-import 'react-calendar/dist/Calendar.css';
+import './Calendar.css';
 
 import { DataContext } from '../../contexts/dataContext';
 
@@ -20,7 +20,7 @@ export default function Agendamento() {
   console.log(value);
 
   return (
-    <div>
+    <div style={{backgroundColor: '#F5F5F5'}} >
 
       {isLoggedIn ? (
   
@@ -66,10 +66,10 @@ export default function Agendamento() {
   
                 <div className="form">
                   <p>Nome completo</p>
-                  <input type="text" name="" id="" />
+                  <input className='input2' type="text" name="" id="" />
   
                   <p>CPF</p>
-                  <IMaskInput placeholder='cpf' type="text" mask="000.000.000-00" name="" id="" />
+                  <IMaskInput className='input2' placeholder='cpf' type="text" mask="000.000.000-00" name="" id="" />
                 </div>
   
               </div>
@@ -80,13 +80,13 @@ export default function Agendamento() {
   
                 <div className="form">
                   <p>Nome do pet</p>
-                  <input type="text" name="" id="" />
+                  <input className='input2' type="text" name="" id="" />
   
                   <p>Tipo de animal</p>
-                  <input type="text" name="" id="" />
+                  <input className='input2' type="text" name="" id="" />
   
                   <p>Data de nascimento</p>
-                  <IMaskInput className='input' mask="00/00/0000" type="text" name="" id="" />
+                  <IMaskInput className='input2' mask="00/00/0000" type="text" name="" id="" />
                 </div>
   
               </div>
@@ -95,9 +95,11 @@ export default function Agendamento() {
   
             <div className="calendar-container">
               <Calendar onChange={(value) => onChange(value)} value={value} />
-  
-              <button>Finalizar</button>
-              <button>Cancelar</button>
+
+              <div className="button-container">
+                <button className='conclude-button'>Finalizar</button>
+                <button className='cancel-button'>Cancelar</button>
+              </div>
             </div>
   
           </div>

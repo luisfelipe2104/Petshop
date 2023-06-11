@@ -69,6 +69,7 @@
 .card {
   border-radius: 10px;
   margin-top: 10px;
+  width: 100%;
 }
 
 .title-card {
@@ -99,6 +100,7 @@
   gap: 25px;
 
   background-color: #EFDB6F;
+
 }
 
 .card img {
@@ -106,13 +108,13 @@
 }
 
 .link{
-  width: 100%;
+  width: 1000;
   display: flex;
   justify-content: center;
 }
 
 .card-button {
-  width: 80%;
+  width: 100px;
   height: 35px;
 
   background-color: #863FE1;
@@ -125,7 +127,7 @@
 
   cursor: pointer;
 }
-s
+
 
 .section-3 {
   width: 100vw;

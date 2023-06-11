@@ -52,7 +52,38 @@
   align-items: center;
 }
 
-.input {
+.input2 {
   border: 2px solid #863FE1;
   border-radius: 10px;
+  width: 281px;
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.conclude-button {
+  background-color: #EFDB6F;
+  border: 0px;
+  border-radius: 20px;
+  padding: 7px 30px;
+}
+
+.cancel-button {
+  background-color: #D1CFC4;
+  border: 0px;
+  border-radius: 20px;
+  padding: 4px 22px;
+  width: fit-content;
 }
