@@ -18,6 +18,7 @@ import { Navigate } from 'react-router-dom';
 
 export default function Agendamento() {
   const [value, onChange] = useState();
+  const [checked, setChecked] = useState(null)
   const { isLoggedIn } = useContext(DataContext)
 
   console.log(value);
@@ -40,24 +41,33 @@ export default function Agendamento() {
   
           <h2>Selecione o serviço desejado</h2>
   
-          <div className="checkbox-container">
+          <Row>
+            <Col md={7}>
+              <Row>
+                <Col md={4}>
+                  <div className="checkbox">
+                    <input type="checkbox" checked={checked == 1} onChange={() => setChecked(1)} />
+                    <h3>Vacinação</h3>
+                  </div>
+                </Col>
+      
+                <Col md={4}>
+                  <div className="checkbox">
+                    <input type="checkbox" checked={checked == 2} onChange={() => setChecked(2)} />
+                    <h3>Banho & Tosa</h3>
+                  </div>
+                </Col>
+      
+                <Col md={4}>
+                  <div className="checkbox">
+                    <input type="checkbox" checked={checked == 3} onChange={() => setChecked(3)} />
+                    <h3>Consulta</h3>
+                  </div>
+                </Col>
+              </Row>
+            </Col>
   
-            <div className="checkbox">
-              <input type="checkbox" name="" id="" />
-              <h3>Vacinação</h3>
-            </div>
-  
-            <div className="checkbox">
-              <input type="checkbox" name="" id="" />
-              <h3>Banho & Tosa</h3>
-            </div>
-  
-            <div className="checkbox">
-              <input type="checkbox" name="" id="" />
-              <h3>Consulta</h3>
-            </div>
-  
-          </div>
+          </Row>
   
           <div className="dividir">
             <Row className='row2'>

@@ -110,3 +110,7 @@
 
   width: fit-content;
 }
+
+.t {
+  border: 2px solid black;
+}
