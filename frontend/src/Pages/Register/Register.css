@@ -89,8 +89,10 @@
 }
 
 .form-container form h2 {
-    font-size: 35px;
+    font-size: 45px;
     color: #FFFFFF;
+
+    height: 70px;
 }
 
 .form-container form input {

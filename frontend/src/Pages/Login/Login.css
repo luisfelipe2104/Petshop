@@ -86,11 +86,14 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    height: fit-content;
 }
 
 .form-container form h2 {
     font-size: 35px;
     color: #FFFFFF;
+
+    height: 70px;
 }
 
 .form-container form input {

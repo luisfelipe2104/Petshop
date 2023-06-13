@@ -1,6 +1,6 @@
 .container-tela-dados {
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
 
     background-color: #F1F1F1;
 }
@@ -67,3 +67,21 @@
 
     border-bottom: 2.5px solid #863FE1;
 }
+
+.item-cart {
+    width: 100vw;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 30px;
+}
+
+.no-scroll {
+    height: 45px;
+}
+
+.no-scroll3 {
+    height: 35px;
+  }

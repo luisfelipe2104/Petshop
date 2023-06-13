@@ -17,7 +17,7 @@ export default function Header() {
       <div className="nav-bar">
         <p>Início</p>
         <p>Serviços</p>
-        { isLoggedIn ? <p>{userData[0].name}</p> : (
+        {isLoggedIn ? <p>{userData[0].name}</p> : (
           <div>
             <Link className='link' to="/login">
               <p>Login</p>
@@ -27,10 +27,12 @@ export default function Header() {
               <p>Cadastro</p>
             </Link>
           </div>
-        ) }
+        )}
 
         <div className="icon-user-container">
-          <img className="icon-user" src={iconUser} />
+          <Link to="/dados" >
+            <img className="icon-user" src={iconUser} />
+          </Link>
         </div>
 
       </div>

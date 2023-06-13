@@ -66,7 +66,7 @@
   height: auto;
 }
 
-.card {
+.cartao {
   border-radius: 10px;
   margin-top: 10px;
   width: 100%;
@@ -103,19 +103,23 @@
 
 }
 
-.card img {
+.cartao img {
   width: 80px;
 }
 
 .link{
-  width: 1000;
+  width: 100px;
   display: flex;
   justify-content: center;
 }
 
 .card-button {
-  width: 100px;
-  height: 35px;
+  width: 150px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-color: #863FE1;
 
@@ -127,7 +131,6 @@
 
   cursor: pointer;
 }
-
 
 .section-3 {
   width: 100vw;

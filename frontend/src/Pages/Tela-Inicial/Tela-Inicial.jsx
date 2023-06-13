@@ -55,7 +55,7 @@ export default function TelaInicial() {
 
           <Row>
             <Col md={3}>
-              <div className="card">
+              <div className="cartao">
                 <div className="title-card">Vacinação</div>
                 <div className="card-background">
                   <img src={vacinacao} />
@@ -67,7 +67,7 @@ export default function TelaInicial() {
             </Col>
 
             <Col md={3}>
-              <div className="card">
+              <div className="cartao">
                 <div className="title-card">Banho & Tosa</div>
                 <div className="card-background">
                   <img src={banhoetosa} />
@@ -79,7 +79,7 @@ export default function TelaInicial() {
             </Col>
 
             <Col md={3}>
-              <div className="card">
+              <div className="cartao">
                 <div className="title-card">Consulta</div>
                 <div className="card-background">
                   <img src={consulta} />
@@ -91,7 +91,7 @@ export default function TelaInicial() {
             </Col>
 
             <Col md={3}>
-              <div className="card">
+              <div className="cartao">
                 <div className="title-card">Produtos</div>
                 <div className="card-background">
                   <img src={produtos} />
