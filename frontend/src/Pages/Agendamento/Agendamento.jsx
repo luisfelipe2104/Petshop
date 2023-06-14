@@ -76,7 +76,7 @@ export default function Agendamento() {
     
                 <div className="inform-your-data">
     
-                  <h2>Informe seus dados</h2>
+                  {/* <h2>Informe seus dados</h2>
     
                   <div className="form">
                     <p>Nome completo</p>
@@ -84,7 +84,7 @@ export default function Agendamento() {
     
                     <p>CPF</p>
                     <IMaskInput className='input2' placeholder='cpf' type="text" mask="000.000.000-00" name="" id="" />
-                  </div>
+                  </div> */}
     
                 </div>
     

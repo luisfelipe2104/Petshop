@@ -7,10 +7,12 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { IMaskInput } from 'react-imask'
 
 function Register() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [cpf, setCpf] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     
@@ -21,7 +23,7 @@ function Register() {
         console.log(email, password);
         if (password === confirmPassword) {
             try {
-                const { data }  = await api.post('/create-user/', { name, email, password })
+                const { data }  = await api.post('/create-user/', { name, email, password, cpf })
                 console.log(data);
                 toast(data.msg)
                 navigate('/login')
@@ -69,6 +71,7 @@ function Register() {
             <form action="" className="form">
                 <h2>Cadastro</h2>
                 <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Nome" />
+                <IMaskInput value={cpf} onChange={(e) => setCpf(e.target.value)} className='input2' placeholder='CPF' type="text" mask="000.000.000-00" />
                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
                 <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Senha" />
                 <input value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} type="password" placeholder="Repetir senha" />

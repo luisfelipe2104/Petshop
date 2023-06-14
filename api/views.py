@@ -13,10 +13,11 @@ class CreateUser(APIView):
             name = serializer.data.get('name')
             email = serializer.data.get('email')
             password = serializer.data.get('password')
+            cpf = serializer.data.get('cpf')
 
             userExists = User.objects.filter(email=email).exists()
             if not userExists:
-                user = User.objects.create(name=name, email=email, password=password)
+                user = User.objects.create(name=name, email=email, password=password, cpf=cpf)
                 user.save()
                 return Response({ 'msg': 'User created!' }, status=status.HTTP_201_CREATED)
             else:
@@ -36,3 +37,7 @@ class Login(APIView):
             return Response({ 'msg': 'user logged in!', 'user': data }, status=status.HTTP_200_OK)
         else:
             return Response({ 'msg': 'invalid credentials!' }, status=status.HTTP_400_BAD_REQUEST)
+
+# class Appointments(APIView):
+#     def post(self, request):
+        

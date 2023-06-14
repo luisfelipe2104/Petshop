@@ -3,7 +3,8 @@ from django.db import models
 # Create your models here.
 class User(models.Model):
   name = models.CharField(max_length=100)
-  email = models.CharField(max_length=100, unique=True)
+  email = models.EmailField(max_length=100, unique=True)
+  cpf = models.CharField(max_length=20, unique=True)
   password = models.CharField(max_length=255)
   created_at = models.DateTimeField(auto_now_add=True)
 
@@ -21,9 +22,9 @@ class Purchase(models.Model):
 
 class Appointment(models.Model):
   appointment_type = models.CharField(max_length=20)
-  fullname = models.CharField(max_length=50)
-  cpf = models.CharField(max_length=20)
+  user_id = models.ForeignKey(User, on_delete=models.CASCADE)
   pet_name = models.CharField(max_length=50)
   animal = models.CharField(max_length=30)
   animal_birthday = models.DateField()
+  date = models.DateField()
   created_at = models.DateTimeField(auto_now_add=True)
