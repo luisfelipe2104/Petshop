@@ -18,10 +18,19 @@ import { Navigate } from 'react-router-dom';
 
 export default function Agendamento() {
   const [value, onChange] = useState();
+  const [name, setName] = useState('')
+  const [animal, setAnimal] = useState('')
+  const [animalBirthday, setAnimalBirthday] = useState('')
   const [checked, setChecked] = useState(null)
-  const { isLoggedIn } = useContext(DataContext)
+  const { isLoggedIn, userData } = useContext(DataContext)
 
   console.log(value);
+
+  const handleSubmit = () => {
+    const id = userData[0].id
+    const appointmentType = checked == 1 && 'Vacinação' || checked == 2 && 'Banho e Tosa' || checked == 3 && 'Consulta' 
+    console.log(name, animal, animalBirthday, id, appointmentType);
+  }
 
   return (
     <div style={{backgroundColor: '#F5F5F5'}} >
@@ -93,14 +102,26 @@ export default function Agendamento() {
                   <h2>Informe seus dados</h2>
     
                   <div className="form">
-                    <p>Nome do pet</p>
-                    <input className='input2' type="text" name="" id="" />
+                    <div>
+                      <p>Nome do pet</p>
+                      <input onChange={(e) => setName(e.target.value)} className='input2' type="text" name="" id="" />
+                    </div>
     
-                    <p>Tipo de animal</p>
-                    <input className='input2' type="text" name="" id="" />
-    
-                    <p>Data de nascimento</p>
-                    <IMaskInput className='input2' mask="00/00/0000" type="text" name="" id="" />
+                  <div>
+                    <p>Tipo de Animal</p>
+                    <select onChange={(e) => setAnimal(e.target.value)} className='input2'>
+                      <option value="">SELECT</option>
+                      <option value="Cachorro">Cachorro</option>
+                      <option value="Gato">Gato</option>
+                      <option value="Papagaio">Papagaio</option>
+                      <option value="Coelho">Coelho</option>
+                    </select>
+                  </div>
+
+                    <div>
+                      <p>Data de nascimento</p>
+                      <IMaskInput onChange={(e) => setAnimalBirthday(e.target.value)} className='input2' mask="00/00/0000" type="text" name="" id="" />
+                    </div>
                   </div>
     
                 </div>
@@ -111,7 +132,7 @@ export default function Agendamento() {
                 <Calendar onChange={(value) => onChange(value)} value={value} />
 
                 <div className="button-container">
-                  <button className='conclude-button'>Finalizar</button>
+                  <button onClick={() => handleSubmit()} className='conclude-button'>Finalizar</button>
                   <button className='cancel-button'>Cancelar</button>
                 </div>
             </Col>

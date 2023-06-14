@@ -114,3 +114,9 @@
 .t {
   border: 2px solid black;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
