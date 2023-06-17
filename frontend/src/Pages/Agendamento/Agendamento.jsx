@@ -51,7 +51,7 @@ export default function Agendamento() {
           <h2>Selecione o serviço desejado</h2>
   
           <Row>
-            <Col md={7}>
+            <Col md={8}>
               <Row>
                 <Col md={4}>
                   <div className="checkbox">

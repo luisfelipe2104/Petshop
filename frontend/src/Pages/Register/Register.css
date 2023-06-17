@@ -38,7 +38,8 @@
 
 .impact-phrase p {
     display: flex;
-    font-size: 36px;
+    font-size: 50px;
+    font-weight: 600;
     word-break: break-all;
     flex-wrap: wrap;
     padding: 0px 10px;
@@ -96,7 +97,7 @@
 }
 
 .form-container form input {
-    width: 80%;
+    width: 60%;
     height: 37px;
     border-radius: 10px;
     border: 0px;
@@ -111,5 +112,6 @@
     width: 105px;
     border: 0px;
     font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
 }

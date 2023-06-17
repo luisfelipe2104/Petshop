@@ -1,6 +1,12 @@
+* {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .container-agendamento{
   padding-left: 25px;
   padding-right: 25px;
+  min-height: 100vh;
 }
 
 .title-container {
