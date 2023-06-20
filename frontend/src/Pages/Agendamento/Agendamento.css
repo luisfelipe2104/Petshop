@@ -1,12 +1,17 @@
-* {
+.no-scroll {
   overflow-x: hidden;
   overflow-y: hidden;
+
+  height: fit-content;
 }
 
 .container-agendamento{
   padding-left: 25px;
   padding-right: 25px;
   min-height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .title-container {
@@ -34,7 +39,6 @@
 
 .checkbox-container{
   width: 50vw;
-  height: 15vh;
 
   display: flex;
   flex-direction: row;

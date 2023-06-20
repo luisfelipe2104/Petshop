@@ -48,29 +48,30 @@ export default function Agendamento() {
   
           <div className="line" />
   
-          <h2>Selecione o serviço desejado</h2>
+          <h2 className='no-scroll'>Selecione o serviço desejado</h2>
   
           <Row>
+            
             <Col md={8}>
               <Row>
                 <Col md={4}>
                   <div className="checkbox">
                     <input type="checkbox" checked={checked == 1} onChange={() => setChecked(1)} />
-                    <h3>Vacinação</h3>
+                    <h3 className='no-scroll'>Vacinação</h3>
                   </div>
                 </Col>
       
                 <Col md={4}>
                   <div className="checkbox">
                     <input type="checkbox" checked={checked == 2} onChange={() => setChecked(2)} />
-                    <h3>Banho & Tosa</h3>
+                    <h3 className='no-scroll'>Banho & Tosa</h3>
                   </div>
                 </Col>
       
                 <Col md={4}>
                   <div className="checkbox">
                     <input type="checkbox" checked={checked == 3} onChange={() => setChecked(3)} />
-                    <h3>Consulta</h3>
+                    <h3 className='no-scroll'>Consulta</h3>
                   </div>
                 </Col>
               </Row>
@@ -99,7 +100,7 @@ export default function Agendamento() {
     
                 <div className="inform-your-pet-data">
     
-                  <h2>Informe seus dados</h2>
+                  <h2 className='no-scroll'>Informe seus dados</h2>
     
                   <div className="form">
                     <div>
