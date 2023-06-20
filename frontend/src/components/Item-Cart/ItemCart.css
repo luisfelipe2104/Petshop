@@ -112,13 +112,22 @@
 }
 
 .no-scroll {
-  height: 45px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  height: fit-content;
 }
 
 .no-scroll2 {
-  height: 41px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  height: fit-content;
 }
 
 .no-scroll3 {
-  height: 51px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  height: fit-content;
 }

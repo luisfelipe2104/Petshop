@@ -9,9 +9,6 @@
   padding-left: 25px;
   padding-right: 25px;
   min-height: 100vh;
-
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .title-container {
@@ -53,6 +50,10 @@
   align-items: center;
 
   gap: 15px;
+}
+
+.checkbox input {
+  margin-top: -7px;
 }
 
 .dividir {
@@ -129,4 +130,28 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.inform-your-pet-data {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.checkbox-container2{
+  margin-bottom: 20px;
+}
+
+.container-hour {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 }

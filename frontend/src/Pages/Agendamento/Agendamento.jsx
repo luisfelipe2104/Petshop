@@ -16,20 +16,23 @@ import { DataContext } from '../../contexts/dataContext';
 
 import { Navigate } from 'react-router-dom';
 
+import dayjs from 'dayjs'
+
 export default function Agendamento() {
   const [value, onChange] = useState();
   const [name, setName] = useState('')
   const [animal, setAnimal] = useState('')
   const [animalBirthday, setAnimalBirthday] = useState('')
+  const [appointmentHour, setAppointmentHour] = useState('')
+  const [appointmentDate, setAppointmentDate] = useState('')
   const [checked, setChecked] = useState(null)
   const { isLoggedIn, userData } = useContext(DataContext)
 
-  console.log(value);
 
   const handleSubmit = () => {
     const id = userData[0].id
     const appointmentType = checked == 1 && 'Vacinação' || checked == 2 && 'Banho e Tosa' || checked == 3 && 'Consulta' 
-    console.log(name, animal, animalBirthday, id, appointmentType);
+    console.log(name, animal, animalBirthday, id, appointmentType, appointmentDate, appointmentHour);
   }
 
   return (
@@ -48,7 +51,7 @@ export default function Agendamento() {
   
           <div className="line" />
   
-          <h2 className='no-scroll'>Selecione o serviço desejado</h2>
+          <h2 className='no-scroll checkbox-container2'>Selecione o serviço desejado</h2>
   
           <Row>
             
@@ -100,16 +103,16 @@ export default function Agendamento() {
     
                 <div className="inform-your-pet-data">
     
-                  <h2 className='no-scroll'>Informe seus dados</h2>
+                  <h2 className='no-scroll'>Informe os dados de seu pet</h2>
     
                   <div className="form">
                     <div>
-                      <p>Nome do pet</p>
+                      <label>Nome do pet</label>
                       <input onChange={(e) => setName(e.target.value)} className='input2' type="text" name="" id="" />
                     </div>
     
                   <div>
-                    <p>Tipo de Animal</p>
+                    <label>Tipo de Animal</label>
                     <select onChange={(e) => setAnimal(e.target.value)} className='input2'>
                       <option value="">SELECT</option>
                       <option value="Cachorro">Cachorro</option>
@@ -120,8 +123,13 @@ export default function Agendamento() {
                   </div>
 
                     <div>
-                      <p>Data de nascimento</p>
+                      <label>Data de nascimento</label>
                       <IMaskInput onChange={(e) => setAnimalBirthday(e.target.value)} className='input2' mask="00/00/0000" type="text" name="" id="" />
+                    </div>
+
+                    <div className="container-hour">
+                      <label for="appt">Selecione o horário da consulta:</label>
+                      <input onChange={(e) => setAppointmentHour(e.target.value)} type="time" id="appt" name="appt"></input>
                     </div>
                   </div>
     
@@ -130,7 +138,14 @@ export default function Agendamento() {
             </Col>
   
             <Col md={4} className='col2'>
-                <Calendar onChange={(value) => onChange(value)} value={value} />
+                <Calendar 
+                  onChange={(value) => {
+                    setAppointmentDate(dayjs(value).format('YYYY-MM-DD'))
+                    onChange(value)
+                  }} 
+                  value={value} 
+                  minDate={new Date()}
+                />
 
                 <div className="button-container">
                   <button onClick={() => handleSubmit()} className='conclude-button'>Finalizar</button>
