@@ -3,6 +3,7 @@ import './Tela-Dados.css'
 
 import Header from '../../components/Header/Header';
 import ItemCart from '../../components/Item-Cart/ItemCart';
+import Appointments from '../../components/Appointments/Appointments';
 
 import { DataContext } from '../../contexts/dataContext'
 
@@ -10,19 +11,19 @@ import { Navigate } from 'react-router-dom'
 
 export default function TelaDados() {
     const [changeContent, setChangeContent] = useState(0)
-    const { isLoggedIn } = useContext(DataContext)
+    const { isLoggedIn, userData } = useContext(DataContext)
 
     return (
         <div>
             {isLoggedIn ? (
 
-                <div>
+                <div style={{backGroundColor: '#F5F5F5;'}}> 
                     <Header />
 
                     <div className="container-tela-dados">
 
                         <div className="title-container-tela-dados">
-                            <div className="title">Olá Nome Sobrenome!</div>
+                            <div className="title">Olá {userData[0].name}!</div>
                         </div>
 
                         <div className="options-container">
@@ -55,20 +56,7 @@ export default function TelaDados() {
 
                         </div>
 
-                        <div className="item-cart">
-                            <ItemCart />
-
-                            <div className="finish-purchase" >
-                                <div className="finish-purchase-values">
-                                    <h3>Total: </h3>
-                                    <h2 className='no-scroll3'>R$ 100,00</h2>
-                                </div>
-
-                                <button>Finalizar Compra</button>
-                            </div>
-
-                        </div>
-
+                    <Appointments />
                     </div>
                 </div>
             ) : <Navigate to='/login' />}

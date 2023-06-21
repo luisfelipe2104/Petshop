@@ -1,0 +1,21 @@
+.appointment-card {
+    height: 25em;
+    background-color: #FFFFFF;
+}
+
+.header-card {
+    background-color: #863FE1;
+    /* height: 60px; */
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-card p {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 0px 0px 0px;
+}
