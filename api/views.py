@@ -42,4 +42,9 @@ class Appointments(APIView):
     def post(self, request):
         serializer = AppointmentSerializer(data=request.data)
 
-        # if serializer.is_valid():
+        if serializer.is_valid():
+            serializer.save()
+            return Response({ 'msg': 'appointment scheduled!' }, status=status.HTTP_201_CREATED)
+        
+        else:
+            return Response({ 'msg': serializer.errors }, status=status.HTTP_400_BAD_REQUEST)

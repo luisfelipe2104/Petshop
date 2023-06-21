@@ -22,9 +22,10 @@ class Purchase(models.Model):
 
 class Appointment(models.Model):
   appointment_type = models.CharField(max_length=20)
+  appointment_hour = models.TimeField()
+  date = models.DateField()
   user_id = models.ForeignKey(User, on_delete=models.CASCADE)
   pet_name = models.CharField(max_length=50)
   animal = models.CharField(max_length=30)
   animal_birthday = models.DateField()
-  date = models.DateField()
   created_at = models.DateTimeField(auto_now_add=True)
