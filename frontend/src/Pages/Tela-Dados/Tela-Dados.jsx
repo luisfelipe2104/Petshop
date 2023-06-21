@@ -9,9 +9,23 @@ import { DataContext } from '../../contexts/dataContext'
 
 import { Navigate } from 'react-router-dom'
 
+import api from '../../services/api'
+import { useEffect } from 'react';
+
 export default function TelaDados() {
     const [changeContent, setChangeContent] = useState(0)
+    const [appointments, setAppointments] = useState(null)
     const { isLoggedIn, userData } = useContext(DataContext)
+
+    const getAppointments = async () => {
+        const { data } = await api.get(`/get-appointments/${userData[0].id}`)
+        setAppointments(data)
+        console.log(data);
+    }
+
+    useEffect(() => {
+        getAppointments()
+    }, [])
 
     return (
         <div>
@@ -55,8 +69,13 @@ export default function TelaDados() {
                             </div>
 
                         </div>
-
-                    <Appointments />
+                    {appointments ? (
+                        <Appointments data={appointments} />
+                    ) : (
+                        <div>
+                            <p>loading...</p>
+                        </div>
+                    )}
                     </div>
                 </div>
             ) : <Navigate to='/login' />}
