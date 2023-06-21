@@ -36,7 +36,7 @@ function Register() {
                 }
             }
         } else {
-            alert('As senhas não coincidem!')
+            toast('As senhas não coincidem!')
         }
     }
 

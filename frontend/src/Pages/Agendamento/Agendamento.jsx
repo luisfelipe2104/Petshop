@@ -7,6 +7,7 @@ import Calendar from 'react-calendar';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { toast } from 'react-toastify';
 
 import { IMaskInput } from 'react-imask';
 
@@ -17,6 +18,8 @@ import { DataContext } from '../../contexts/dataContext';
 import { Navigate } from 'react-router-dom';
 
 import dayjs from 'dayjs'
+
+import api from '../../services/api'
 
 export default function Agendamento() {
   const [value, onChange] = useState();
@@ -29,10 +32,30 @@ export default function Agendamento() {
   const { isLoggedIn, userData } = useContext(DataContext)
 
 
-  const handleSubmit = () => {
-    const id = userData[0].id
+  const handleSubmit = async () => {
+    const user_id = userData[0].id
     const appointmentType = checked == 1 && 'Vacinação' || checked == 2 && 'Banho e Tosa' || checked == 3 && 'Consulta' 
-    console.log(name, animal, animalBirthday, id, appointmentType, appointmentDate, appointmentHour);
+    const requestData = {
+      appointment_type: appointmentType,
+      appointment_hour: appointmentHour,
+      date: appointmentDate,
+      user_id: user_id,
+      pet_name: name,
+      animal: animal,
+      animal_birthday: animalBirthday
+    }
+    try {
+      const { data }  = await api.post('/appointments/', requestData)
+      console.log(data);
+      toast(data.msg)
+    } catch (err) {
+        const data = err.response.data.msg
+        const array = Object.values(data)
+        for (let i = 0; i < array.length; i++) {
+            const errMessage = array[i][0]
+            toast(errMessage)
+        }
+    }
   }
 
   return (
@@ -122,9 +145,9 @@ export default function Agendamento() {
                     </select>
                   </div>
 
-                    <div>
-                      <label>Data de nascimento</label>
-                      <IMaskInput onChange={(e) => setAnimalBirthday(e.target.value)} className='input2' mask="00/00/0000" type="text" name="" id="" />
+                    <div className="container-hour">
+                      <label for="birthday">Data de nascimento:</label>
+                      <input onChange={(e) => setAnimalBirthday(dayjs(e.target.value).format('YYYY-MM-DD'))} type="date" id="birthday" name="birthday" />
                     </div>
 
                     <div className="container-hour">
