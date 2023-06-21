@@ -5,6 +5,8 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import { ToastContainer } from 'react-toastify';
 
+import './App.css'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { DataProvider } from "./contexts/dataContext";
