@@ -45,7 +45,7 @@ export default function Agendamento() {
       animal_birthday: animalBirthday
     }
     try {
-      const { data }  = await api.post('/appointments/', requestData)
+      const { data }  = await api.post('/schedule-appointments/', requestData)
       console.log(data);
       toast(data.msg)
     } catch (err) {

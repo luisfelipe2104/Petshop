@@ -38,7 +38,7 @@ class Login(APIView):
         else:
             return Response({ 'msg': 'invalid credentials!' }, status=status.HTTP_400_BAD_REQUEST)
 
-class Appointments(APIView):
+class ScheduleAppointments(APIView):
     def post(self, request):
         serializer = AppointmentSerializer(data=request.data)
 
@@ -48,3 +48,10 @@ class Appointments(APIView):
         
         else:
             return Response({ 'msg': serializer.errors }, status=status.HTTP_400_BAD_REQUEST)
+    
+class GetAppointments(APIView):
+    def get(self, request, user_id):
+        appointments = Appointment.objects.filter(user_id=user_id)
+        serializer = AppointmentSerializer(appointments, many=True)
+        data = serializer.data
+        return Response(data, status=status.HTTP_200_OK)
