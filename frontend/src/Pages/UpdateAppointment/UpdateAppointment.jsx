@@ -20,6 +20,7 @@ import { Navigate } from 'react-router-dom';
 import dayjs from 'dayjs'
 
 import api from '../../services/api'
+import { useEffect } from 'react';
 
 export default function UpdateAppointment() {
   const [value, onChange] = useState();
@@ -29,13 +30,14 @@ export default function UpdateAppointment() {
   const [appointmentHour, setAppointmentHour] = useState('')
   const [appointmentDate, setAppointmentDate] = useState('')
   const [checked, setChecked] = useState(null)
-  const { isLoggedIn, userData } = useContext(DataContext)
+  const { isLoggedIn, userData, updateAppointmentID } = useContext(DataContext)
 
 
   const handleSubmit = async () => {
     const user_id = userData[0].id
     const appointmentType = checked == 1 && 'Vacinação' || checked == 2 && 'Banho e Tosa' || checked == 3 && 'Consulta' 
     const requestData = {
+      id: updateAppointmentID,
       appointment_type: appointmentType,
       appointment_hour: appointmentHour,
       date: appointmentDate,
@@ -45,7 +47,7 @@ export default function UpdateAppointment() {
       animal_birthday: animalBirthday
     }
     try {
-      const { data }  = await api.post('/schedule-appointments/', requestData)
+      const { data }  = await api.put(`/update-appointment/`, requestData)
       console.log(data);
       toast(data.msg)
     } catch (err) {
@@ -57,6 +59,20 @@ export default function UpdateAppointment() {
         }
     }
   }
+
+  const getAppointment = async () => {
+    const { data } = await api.get(`/get-appointment/${updateAppointmentID}`)
+    console.log(data[0]);
+    setName(data[0].pet_name)
+    setAnimal(data[0].animal)
+    setAnimalBirthday(data[0].animal_birthday)
+    setAppointmentHour(data[0].appointment_hour)
+    setAppointmentDate(data[0].date)
+  }
+
+  useEffect(() => {
+    getAppointment()
+  }, [updateAppointmentID])
 
   return (
     <div style={{backgroundColor: '#F5F5F5'}} >
@@ -131,12 +147,12 @@ export default function UpdateAppointment() {
                   <div className="form">
                     <div>
                       <label>Nome do pet</label>
-                      <input onChange={(e) => setName(e.target.value)} className='input2' type="text" name="" id="" />
+                      <input value={name} onChange={(e) => setName(e.target.value)} className='input2' type="text" name="" id="" />
                     </div>
     
                   <div>
                     <label>Tipo de Animal</label>
-                    <select onChange={(e) => setAnimal(e.target.value)} className='input2'>
+                    <select value={animal} onChange={(e) => setAnimal(e.target.value)} className='input2'>
                       <option value="">SELECT</option>
                       <option value="Cachorro">Cachorro</option>
                       <option value="Gato">Gato</option>
@@ -147,12 +163,12 @@ export default function UpdateAppointment() {
 
                     <div className="container-hour">
                       <label for="birthday">Data de nascimento:</label>
-                      <input onChange={(e) => setAnimalBirthday(dayjs(e.target.value).format('YYYY-MM-DD'))} type="date" id="birthday" name="birthday" />
+                      <input value={animalBirthday} onChange={(e) => setAnimalBirthday(dayjs(e.target.value).format('YYYY-MM-DD'))} type="date" id="birthday" name="birthday" />
                     </div>
 
                     <div className="container-hour">
                       <label for="appt">Selecione o horário da consulta:</label>
-                      <input onChange={(e) => setAppointmentHour(e.target.value)} type="time" id="appt" name="appt"></input>
+                      <input value={appointmentHour} onChange={(e) => setAppointmentHour(e.target.value)} type="time" id="appt" name="appt"></input>
                     </div>
                   </div>
     
