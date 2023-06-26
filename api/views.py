@@ -49,11 +49,20 @@ class ScheduleAppointments(APIView):
         else:
             return Response({ 'msg': serializer.errors }, status=status.HTTP_400_BAD_REQUEST)
     
+class GetAppointments(APIView):
+    def get(self, request, user_id):
+        appointments = Appointment.objects.filter(user_id=user_id)
+        serializer = AppointmentSerializer(appointments, many=True)
+        data = serializer.data
+        return Response(data, status=status.HTTP_200_OK)
+
+class CancelAppointment(APIView):
     def delete(self, request, pk):
         appointment = Appointment.objects.get(id=pk)
         appointment.delete()
         return Response({ 'msg': 'appointment deleted!' }, status=status.HTTP_200_OK)
 
+class UpdateAppointment(APIView):
     def put(self, request):
         serializer = AppointmentSerializer(data=request.data)
         if serializer.is_valid():
@@ -62,10 +71,3 @@ class ScheduleAppointments(APIView):
 
         else:
             return Response({ 'msg': serializer.errors }, status=status.HTTP_400_BAD_REQUEST)
-
-class GetAppointments(APIView):
-    def get(self, request, user_id):
-        appointments = Appointment.objects.filter(user_id=user_id)
-        serializer = AppointmentSerializer(appointments, many=True)
-        data = serializer.data
-        return Response(data, status=status.HTTP_200_OK)
