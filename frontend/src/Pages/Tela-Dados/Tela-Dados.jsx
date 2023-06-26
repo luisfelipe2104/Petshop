@@ -70,7 +70,7 @@ export default function TelaDados() {
 
                         </div>
                     {appointments ? (
-                        <Appointments data={appointments} />
+                        <Appointments getAppointments={getAppointments} data={appointments} />
                     ) : (
                         <div>
                             <p>loading...</p>

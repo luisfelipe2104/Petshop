@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Appointments.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -6,10 +6,26 @@ import Col from "react-bootstrap/Col";
 import { toast } from "react-toastify";
 import dayjs from "dayjs";
 
-function Appointments({ data }) {
+import AppointmentInfo from "../modals/AppointmentInfo";
+import { DataContext } from "../../contexts/dataContext";
+
+function Appointments({ data, getAppointments }) {
+  const [show, setShow] = useState(false);
+  const { appointmentData, setAppointmentData } = useContext(DataContext)
+
+  const handleClose = () => setShow(false);
+
+  const handleShow = (item) => {
+    setAppointmentData(item)
+    setShow(true);
+  }
+
   data.forEach((i) => {
     console.log(i);
   });
+
+  if (!data) return <div><p>Loading...</p></div>
+
   return (
     <Container style={{ marginTop: "30px" }}>
       <Row>
@@ -33,7 +49,7 @@ function Appointments({ data }) {
                   </div>
 
                   <div className="button-container">
-                    <button>Cancelar</button>
+                    <button onClick={() => handleShow(item)}>Ver mais</button>
                   </div>
                 </div>
               </div>
@@ -41,6 +57,7 @@ function Appointments({ data }) {
           );
         })}
       </Row>
+      <AppointmentInfo getAppointments={getAppointments} show={show} handleClose={handleClose} />
     </Container>
   );
 }

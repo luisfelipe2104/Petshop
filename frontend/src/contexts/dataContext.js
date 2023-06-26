@@ -5,7 +5,8 @@ export const DataContext = createContext({})
 
 export function DataProvider({ children }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
-    const [userData, setUserData] = useState()
+    const [userData, setUserData] = useState(null)
+    const [appointmentData, setAppointmentData] = useState(null)
 
     const handleLogout = async () => {
         localStorage.clear()
@@ -26,6 +27,8 @@ export function DataProvider({ children }) {
     return (
         <DataContext.Provider
             value={{
+                appointmentData, 
+                setAppointmentData,
                 isLoggedIn, 
                 setIsLoggedIn,
                 userData, 
