@@ -54,7 +54,7 @@ class ScheduleAppointments(APIView):
         appointment.delete()
         return Response({ 'msg': 'appointment deleted!' }, status=status.HTTP_200_OK)
 
-    def put(self, request, pk):
+    def put(self, request):
         serializer = AppointmentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
