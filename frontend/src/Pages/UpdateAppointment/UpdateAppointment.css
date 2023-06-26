@@ -1,0 +1,161 @@
+.no-scroll {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  
+    height: fit-content;
+  }
+  
+  .container-agendamento{
+    padding-left: 25px;
+    padding-right: 25px;
+    min-height: 100vh;
+  }
+  
+  .title-container {
+    width: 100%;
+  }
+  
+  .title {
+    font-size: 35px;
+    font-family: 'Nunito Sans', sans-serif;
+  
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .line {
+    width: 100%;
+    height: 1px;
+  
+    background-color: #863FE1;
+  }
+  
+  .select-service { 
+    width: 50vw;
+  }
+  
+  .checkbox-container{
+    width: 50vw;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  
+    overflow-y: hidden;
+  }
+  
+  .checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    gap: 15px;
+  }
+  
+  .checkbox input {
+    margin-top: -7px;
+  }
+  
+  .dividir {
+    display: flex;
+    flex-direction: row;
+  
+    align-items: center;
+  }
+  
+  .select-service {
+    border: 2px solid blue;
+    width: fit-content;
+  }
+  
+  .input2 {
+    border: 2px solid #863FE1;
+    border-radius: 10px;
+    width: 100%;
+    height: 35px;
+    font-size: 18px;
+    padding: 0px 5px;
+  }
+  
+  .calendar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  
+    width: fit-content;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .conclude-button {
+    background-color: #EFDB6F;
+    border: 0px;
+    border-radius: 20px;
+    padding: 7px 30px;
+  }
+  
+  .cancel-button {
+    background-color: #D1CFC4;
+    border: 0px;
+    border-radius: 20px;
+    padding: 4px 22px;
+    width: fit-content;
+  }
+  
+  .row2 {
+    width: 100%;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .col2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  
+    width: fit-content;
+  }
+  
+  .t {
+    border: 2px solid black;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .inform-your-pet-data {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+  }
+  
+  .checkbox-container2{
+    margin-bottom: 20px;
+  }
+  
+  .container-hour {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  

@@ -171,7 +171,7 @@ export default function Agendamento() {
                 />
 
                 <div className="button-container">
-                  <button onClick={() => handleSubmit()} className='conclude-button'>Finalizar</button>
+                  <button onClick={() => handleSubmit()} className='conclude-button no-scroll'>Finalizar</button>
                   <button className='cancel-button'>Cancelar</button>
                 </div>
             </Col>

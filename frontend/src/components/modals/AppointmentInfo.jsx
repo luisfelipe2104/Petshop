@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { DataContext } from "../../contexts/dataContext";
 import DeleteAppointment from "./DeleteAppointment";
+import { useNavigate } from "react-router-dom";
 
 function AppointmentInfo({ show, handleClose, getAppointments }) {
     const { appointmentData, userData } = useContext(DataContext)
@@ -15,8 +16,10 @@ function AppointmentInfo({ show, handleClose, getAppointments }) {
         closeDelete()
         handleClose()
     }
+
+    const navigate = useNavigate()
     
-    if (!appointmentData) return <div><p>loading...</p></div>
+    if (!appointmentData) return <div><p></p></div>
     
   return (
     <>
@@ -44,7 +47,6 @@ function AppointmentInfo({ show, handleClose, getAppointments }) {
 
                 <div>
                     <p><strong>Animal:</strong> {appointmentData.animal}</p>
-
                 </div>
                 
                 <div>
@@ -53,17 +55,14 @@ function AppointmentInfo({ show, handleClose, getAppointments }) {
 
                 <div>
                     <p><strong>Data de nascimento:</strong> {appointmentData.animal_birthday}</p>
-
                 </div>
 
                 <div>
                     <p><strong>Data da consulta:</strong> {appointmentData.date}</p>
-
                 </div>
 
                 <div>
                     <p><strong>Horário da consulta:</strong> {appointmentData.appointment_hour}</p>
-
                 </div>
             </div>
 
@@ -73,13 +72,16 @@ function AppointmentInfo({ show, handleClose, getAppointments }) {
           <Button variant="danger" onClick={() => setShowDelete(true)}>
             Cancelar consulta
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={() => {
+            handleClose()
+            navigate('/update-appointment')
+          }}>
             Atualizar consulta
           </Button>
         </Modal.Footer>
       </Modal>
 
-      <DeleteAppointment hideAll={hideAll} show={showDelete} handleClose={closeDelete} />
+      <DeleteAppointment appointmentID={appointmentData.id} hideAll={hideAll} show={showDelete} handleClose={closeDelete} />
     </>
   );
 }
