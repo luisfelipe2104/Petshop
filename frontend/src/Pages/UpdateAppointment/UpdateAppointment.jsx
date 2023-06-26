@@ -37,7 +37,7 @@ export default function UpdateAppointment() {
     const user_id = userData[0].id
     const appointmentType = checked == 1 && 'Vacinação' || checked == 2 && 'Banho e Tosa' || checked == 3 && 'Consulta' 
     const requestData = {
-      id: updateAppointmentID,
+      // id: updateAppointmentID,
       appointment_type: appointmentType,
       appointment_hour: appointmentHour,
       date: appointmentDate,
@@ -47,7 +47,7 @@ export default function UpdateAppointment() {
       animal_birthday: animalBirthday
     }
     try {
-      const { data }  = await api.put(`/update-appointment/`, requestData)
+      const { data }  = await api.put(`/update-appointment/${updateAppointmentID}`, requestData)
       console.log(data);
       toast(data.msg)
     } catch (err) {

@@ -70,8 +70,9 @@ class CancelAppointment(APIView):
         return Response({ 'msg': 'appointment deleted!' }, status=status.HTTP_200_OK)
 
 class UpdateAppointment(APIView):
-    def put(self, request):
-        serializer = AppointmentSerializer(data=request.data)
+    def put(self, request, pk):
+        appointment = Appointment.objects.get(id=pk)
+        serializer = AppointmentSerializer(instance=appointment, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response({ 'msg': 'appointment updated!' })
