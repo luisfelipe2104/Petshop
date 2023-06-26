@@ -55,6 +55,13 @@ export default function Agendamento() {
             const errMessage = array[i][0]
             toast(errMessage)
         }
+    } finally {
+      setName('')
+      setAnimal('')
+      setAnimalBirthday('')
+      setAppointmentHour('')
+      setAppointmentDate('')
+      setChecked(null)
     }
   }
 
@@ -131,12 +138,12 @@ export default function Agendamento() {
                   <div className="form">
                     <div>
                       <label>Nome do pet</label>
-                      <input onChange={(e) => setName(e.target.value)} className='input2' type="text" name="" id="" />
+                      <input value={name} onChange={(e) => setName(e.target.value)} className='input2' type="text" name="" id="" />
                     </div>
     
                   <div>
                     <label>Tipo de Animal</label>
-                    <select onChange={(e) => setAnimal(e.target.value)} className='input2'>
+                    <select value={animal} onChange={(e) => setAnimal(e.target.value)} className='input2'>
                       <option value="">SELECT</option>
                       <option value="Cachorro">Cachorro</option>
                       <option value="Gato">Gato</option>
@@ -147,12 +154,12 @@ export default function Agendamento() {
 
                     <div className="container-hour">
                       <label for="birthday">Data de nascimento:</label>
-                      <input onChange={(e) => setAnimalBirthday(dayjs(e.target.value).format('YYYY-MM-DD'))} type="date" id="birthday" name="birthday" />
+                      <input value={animalBirthday} onChange={(e) => setAnimalBirthday(dayjs(e.target.value).format('YYYY-MM-DD'))} type="date" id="birthday" name="birthday" />
                     </div>
 
                     <div className="container-hour">
                       <label for="appt">Selecione o horário da consulta:</label>
-                      <input onChange={(e) => setAppointmentHour(e.target.value)} type="time" id="appt" name="appt"></input>
+                      <input value={appointmentHour} onChange={(e) => setAppointmentHour(e.target.value)} type="time" id="appt" name="appt"></input>
                     </div>
                   </div>
     

@@ -57,6 +57,13 @@ export default function UpdateAppointment() {
             const errMessage = array[i][0]
             toast(errMessage)
         }
+    } finally {
+        setName('')
+        setAnimal('')
+        setAnimalBirthday('')
+        setAppointmentHour('')
+        setAppointmentDate('')
+        setChecked(null)
     }
   }
 
