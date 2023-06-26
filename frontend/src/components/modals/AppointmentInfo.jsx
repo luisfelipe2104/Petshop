@@ -6,7 +6,7 @@ import DeleteAppointment from "./DeleteAppointment";
 import { useNavigate } from "react-router-dom";
 
 function AppointmentInfo({ show, handleClose, getAppointments }) {
-    const { appointmentData, userData } = useContext(DataContext)
+    const { appointmentData, userData, setUpdateAppointmentID } = useContext(DataContext)
 
     const [showDelete, setShowDelete] = useState(false)
     const closeDelete = () => setShowDelete(false)
@@ -73,6 +73,7 @@ function AppointmentInfo({ show, handleClose, getAppointments }) {
             Cancelar consulta
           </Button>
           <Button variant="primary" onClick={() => {
+            setUpdateAppointmentID(appointmentData.id)
             handleClose()
             navigate('/update-appointment')
           }}>

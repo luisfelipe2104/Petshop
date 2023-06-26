@@ -6,6 +6,7 @@ export const DataContext = createContext({})
 export function DataProvider({ children }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [userData, setUserData] = useState(null)
+    const [updateAppointmentID, setUpdateAppointmentID] = useState(null)
     const [appointmentData, setAppointmentData] = useState(null)
 
     const handleLogout = async () => {
@@ -27,6 +28,8 @@ export function DataProvider({ children }) {
     return (
         <DataContext.Provider
             value={{
+                updateAppointmentID, 
+                setUpdateAppointmentID,
                 appointmentData, 
                 setAppointmentData,
                 isLoggedIn, 

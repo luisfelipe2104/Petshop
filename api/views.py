@@ -56,6 +56,13 @@ class GetAppointments(APIView):
         data = serializer.data
         return Response(data, status=status.HTTP_200_OK)
 
+class GetAppointment(APIView):
+    def get(self, request, pk):
+        appointments = Appointment.objects.filter(id=pk)
+        serializer = AppointmentSerializer(appointments, many=True)
+        data = serializer.data
+        return Response(data, status=status.HTTP_200_OK)
+
 class CancelAppointment(APIView):
     def delete(self, request, pk):
         appointment = Appointment.objects.get(id=pk)
